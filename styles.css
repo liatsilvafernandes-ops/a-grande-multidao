@@ -231,6 +231,18 @@ h1 {
   border: 1px solid rgba(244, 200, 107, 0.2);
 }
 
+.album-trigger {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.album-trigger:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
 .players {
   display: grid;
   gap: 24px;
@@ -258,6 +270,55 @@ h1 {
   font-family: "Oswald", sans-serif;
   font-size: 0.9rem;
   color: #c5bdb1;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-content {
+  position: relative;
+  z-index: 1;
+  max-width: min(90vw, 960px);
+  max-height: 85vh;
+  padding: 16px;
+  background: #0b0b0b;
+  border: 1px solid rgba(244, 200, 107, 0.3);
+  border-radius: 12px;
+}
+
+.lightbox-content img {
+  width: 100%;
+  height: auto;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: var(--fog);
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 
 .footer {
